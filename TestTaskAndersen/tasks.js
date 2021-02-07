@@ -17,8 +17,8 @@ function task1() {
 
 function task2() {
     let name = (prompt("Введите имя") == "Вячеслав") ?
-        () => alert('Привет, Вячеслав') :
-        () => alert("Нет такого имени");
+        alert('Привет, Вячеслав') :
+        alert("Нет такого имени");
 }
 
 /*
@@ -28,13 +28,14 @@ function task2() {
 */
 
 function task3() {
-    let numArray = arr => {
-        return Array.isArray(arr) && arr.length >= 1 ? arr.filter(el => el % 3 === 0) : "Введите массив"
-    }
+    const arr = prompt("введите массив", [123456789]);
+    const arrFiltred = arr.split("").filter(el => el % 3 === 0);
+    alert(arrFiltred);
 }
 
 /*
-Форма для выбора доступа доступного
+Форма для выбора доступа доступного задания. 
+Для корректного выбора необходимо ввести число от 1 до 3
 */
 let testNumber = (prompt("Введите номер тестового задания"));
 switch (testNumber) {
@@ -45,8 +46,7 @@ switch (testNumber) {
         task2();
         break;
     case ("3"):
-        let testArr = prompt("введите элементы массива через запятую").split(', ', 2);
-        task3(testArr);
+        task3();
         break;
     default:
         alert("Вы ввели неверное значение");
